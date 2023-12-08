@@ -12,7 +12,7 @@ public class MockBuffer extends Buffer{
 		return buffer;
 	}
 	
-	// To test exception in remove method, does not work
+	// To test exception in remove method
 	public synchronized void notifyMe() {
 		notify();
 		notifyAll();

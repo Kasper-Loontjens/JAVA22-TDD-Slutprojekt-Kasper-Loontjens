@@ -105,12 +105,10 @@ public class BufferTest {
 		MockTimer mockTimer = new MockTimer(buffer,20, true);
 		Thread timerThread = new Thread(mockTimer);
 		timerThread.start();
-		mockTimer.run();
 
-		fail();
-		//assertThrows(InterruptedException.class,()-> buffer.remove());
+		assertTrue(buffer.getBuffer().isEmpty());
+		assertThrows(InterruptedException.class,()-> buffer.remove());
 		
-		// Did not get this to work, the wait function hindered the program from continuing despite notify
 	}
 	
 	@Test
